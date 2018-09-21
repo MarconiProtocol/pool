@@ -4,33 +4,65 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ethereum Mining Pool</title>
-    <meta name="description" content="High profitability Ethereum mining pool"/>
-    <meta name="keywords" content="ethereum, pool, mining, cryptocurrency"/>
+    <title>Marconi Pool</title>
+    <meta name="description" content="High profitability Marconi mining pool"/>
+    <meta name="keywords" content="marconi, pool, mining, cryptocurrency"/>
     <script src="https://cdn.polyfill.io/v1/polyfill.min.js?features=Intl.~locale.en"></script>
     {{content-for "head"}}
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link rel="stylesheet" href="{{rootURL}}assets/open-ethereum-pool.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/pool.css">
     {{content-for "head-footer"}}
   </head>
   <body>
     {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/open-ethereum-pool.js"></script>
+    <script src="{{rootURL}}assets/pool.js"></script>
 
     {{content-for "body-footer"}}
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">&copy; CHANGEME in app/templates/index.html |
-          Powered by <a href="https://github.com/sammy007/open-ethereum-pool" target="_blank">open-ethereum-pool</a> |
-          <strong>Dev ETH/ETC:</strong>
-          <a href="https://etherscan.io/address/0xb85150eb365e7df0941f0cf08235f987ba91506a" rel="nofollow" target="_blank">
-            0xb85150eb365e7df0941f0cf08235f987ba91506a
-          </a>
-        </p>
+<footer class="footer-section blue-bg col-xs-12 no-padding">
+    <section class="container">
+      <div class="row">
+        <div class="footer-box col-xs-12 text-center footer-box-home">
+          <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 pull-right">
+            <div class="col-xs-12 col-md-3 col-md-offset-2 footer-links community align-right">
+              <ul class="row">
+                <li class="col-xs-12 link-head"><b>Community</b></li>
+                <li class="col-xs-12 clickable twitter"><a href="https://twitter.com/marconiprotocol">Twitter</a></li>
+                <li class="col-xs-12 clickable mail"><a class="transparent-btn btn1 joinBtn trackBtn-3" href="https://www.marconi.org/?mailinglist=1" data-toggle="modal">Mailing List</a></li>
+                <li class="col-xs-12 clickable contact"><a href="mailto:hello@marconi.org">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-md-3 footer-links align-right">
+              <ul class="row">
+                <li class="col-xs-12 link-head"><b>Technology</b></li>
+                <li class="col-xs-12 clickable"><a href="https://docsend.com/view/5zragmb">White Paper</a></li>
+                <li class="col-xs-12 clickable"><a href="https://medium.com/marconiprotocol">Blog</a></li>
+                <li class="col-xs-12 clickable"><a href="https://github.com/MarconiProtocol/wiki/wiki">Github</a></li>
+                <li class="col-xs-12 clickable"><a href="https://explorer.testnet.marconi.org/home">Explorer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-md-3 footer-links align-right">
+              <ul class="row border-none">
+                <li class="col-xs-12 link-head"><b>Organization</b></li>
+                <li class="col-xs-12 clickable"><a href="https://marconi.org/team">Team</a></li>
+                <li class="col-xs-12 clickable"><a href="https://marconi.org/privacy">Privacy Policy</a></li>
+                <li class="col-xs-12 clickable"><a href="https://marconi.org/terms">Terms of Service</a></li>
+                <li class="col-xs-12 clickable"><a href="https://marconi.org/careers">Careers</a></li>
+              </ul>
+            </div>
+          </div> 
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pull-left">
+            <div class="footer-logo pull-left"><a href="index.html"> </a> </div>                  
+       <div class="copyright">&copy; 2018 Marconi Foundation</div>                        
+          </div>
+        <!--footer-box-->
+        </div>
       </div>
-    </footer>
+      <!--container-->
+    </section>
+    <!--footer-->
+  </footer>
   </body>
 </html>

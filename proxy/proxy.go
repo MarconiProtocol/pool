@@ -13,15 +13,16 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/sammy007/open-ethereum-pool/policy"
-	"github.com/sammy007/open-ethereum-pool/rpc"
-	"github.com/sammy007/open-ethereum-pool/storage"
-	"github.com/sammy007/open-ethereum-pool/util"
+	"git.marconi.org/marconiprotocol/pool/policy"
+	"git.marconi.org/marconiprotocol/pool/rpc"
+	"git.marconi.org/marconiprotocol/pool/storage"
+	"git.marconi.org/marconiprotocol/pool/util"
 )
 
 type ProxyServer struct {
 	config             *Config
 	blockTemplate      atomic.Value
+	blockWriteMutex    sync.Mutex
 	upstream           int32
 	upstreams          []*rpc.RPCClient
 	backend            *storage.RedisClient

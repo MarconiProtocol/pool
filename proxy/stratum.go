@@ -7,9 +7,10 @@ import (
 	"io"
 	"log"
 	"net"
+	"strconv"
 	"time"
 
-	"github.com/sammy007/open-ethereum-pool/util"
+	"git.marconi.org/marconiprotocol/pool/util"
 )
 
 const (
@@ -190,7 +191,8 @@ func (s *ProxyServer) broadcastNewJobs() {
 	if t == nil || len(t.Header) == 0 || s.isSick() {
 		return
 	}
-	reply := []string{t.Header, t.Seed, s.diff}
+	block_height_decimal_str := strconv.FormatUint(t.Height, 10)
+	reply := []string{t.Header, t.Seed, s.diff, block_height_decimal_str}
 
 	s.sessionsMu.RLock()
 	defer s.sessionsMu.RUnlock()

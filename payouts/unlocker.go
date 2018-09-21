@@ -10,9 +10,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/math"
 
-	"github.com/sammy007/open-ethereum-pool/rpc"
-	"github.com/sammy007/open-ethereum-pool/storage"
-	"github.com/sammy007/open-ethereum-pool/util"
+	"git.marconi.org/marconiprotocol/pool/rpc"
+	"git.marconi.org/marconiprotocol/pool/storage"
+	"git.marconi.org/marconiprotocol/pool/util"
 )
 
 type UnlockerConfig struct {
@@ -29,14 +29,22 @@ type UnlockerConfig struct {
 }
 
 const minDepth = 16
-const byzantiumHardForkHeight = 4370000
+const byzantiumHardForkHeight = 0
+const mip1HardForkHeight = 262800
+const mip2HardForkHeight = 788400
+const mip3HardForkHeight = 1839600
+const mip4HardForkHeight = 2365200
 
-var homesteadReward = math.MustParseBig256("5000000000000000000")
-var byzantiumReward = math.MustParseBig256("3000000000000000000")
+var byzantiumReward = math.MustParseBig256("1000000000000000000")
+var mip1Reward = math.MustParseBig256("20000000000000000000")
+var mip2Reward = math.MustParseBig256("10000000000000000000")
+var mip3Reward = math.MustParseBig256("5000000000000000000")
+var mip4Reward = math.MustParseBig256("3000000000000000000")
 
-// Donate 10% from pool fees to developers
-const donationFee = 10.0
-const donationAccount = "0xb85150eb365e7df0941f0cf08235f987ba91506a"
+// Donate 1% from pool fees to the Marconi Foundation. Marconi Foundation has many ongoing expenses in order to operate and maintain the Marconi blockchain.
+// However, if you wish to turn off the donation, you can do so via the Unlocker Config by setting 'Donate' to false
+const donationFee = 1.0
+const donationAccount = "0x48306923239d6aa26b7827a0bf5ec090ccc3bd3d" // this is the address of the Marconi Foundation
 
 type BlockUnlocker struct {
 	config   *UnlockerConfig
@@ -502,10 +510,16 @@ func weiToShannonInt64(wei *big.Rat) int64 {
 }
 
 func getConstReward(height int64) *big.Int {
-	if height >= byzantiumHardForkHeight {
-		return new(big.Int).Set(byzantiumReward)
+	if height >= mip4HardForkHeight {
+		return new(big.Int).Set(mip4Reward)
+	} else if height >= mip3HardForkHeight {
+		return new(big.Int).Set(mip3Reward)
+	} else if height >= mip2HardForkHeight {
+		return new(big.Int).Set(mip2Reward)
+	} else if height >= mip1HardForkHeight {
+		return new(big.Int).Set(mip1Reward)
 	}
-	return new(big.Int).Set(homesteadReward)
+	return new(big.Int).Set(byzantiumReward)
 }
 
 func getRewardForUncle(height int64) *big.Int {

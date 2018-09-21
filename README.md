@@ -1,24 +1,7 @@
-## Open Source Ethereum Mining Pool
+#### This repo was forked from https://github.com/sammy007/open-ethereum-pool
 
-![Miner's stats page](https://user-images.githubusercontent.com/7374093/31591180-43c72364-b236-11e7-8d47-726cd66b876a.png)
-
-[![Join the chat at https://gitter.im/sammy007/open-ethereum-pool](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sammy007/open-ethereum-pool?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/sammy007/open-ethereum-pool.svg?branch=develop)](https://travis-ci.org/sammy007/open-ethereum-pool) [![Go Report Card](https://goreportcard.com/badge/github.com/sammy007/open-ethereum-pool)](https://goreportcard.com/report/github.com/sammy007/open-ethereum-pool)
-
-### Features
-
-**This pool is being further developed to provide an easy to use pool for Ethereum miners. This software is functional however an optimised release of the pool is expected soon. Testing and bug submissions are welcome!**
-
-* Support for HTTP and Stratum mining
-* Detailed block stats with luck percentage and full reward
-* Failover geth instances: geth high availability built in
-* Modern beautiful Ember.js frontend
-* Separate stats for workers: can highlight timed-out workers so miners can perform maintenance of rigs
-* JSON-API for stats
-
-#### Proxies
-
-* [Ether-Proxy](https://github.com/sammy007/ether-proxy) HTTP proxy with web interface
-* [Stratum Proxy](https://github.com/Atrides/eth-proxy) for Ethereum
+## Marconi Mining Pool
+This is a fork of [open-ethereum-pool](https://github.com/sammy007/open-ethereum-pool) that we have modified to work with go-methereum and the [Marconi Protocol](https//marconi.org). 
 
 ### Building on Linux
 
@@ -32,21 +15,21 @@ Dependencies:
 
 **I highly recommend to use Ubuntu 16.04 LTS.**
 
-First install  [go-ethereum](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu).
+First install  [go-methereum](https://git.marconi.org/marconiprotocol/go-methereum).
 
-Clone & compile:
 
-    git config --global http.https://gopkg.in.followRedirects true
-    git clone https://github.com/sammy007/open-ethereum-pool.git
-    cd open-ethereum-pool
+Clone & compile
+```
+    git clone https://git.marconi.org/marconiprotocol/pool.git
+    cd pool
     make
-
+```
 Install redis-server.
 
 ### Running Pool
-
-    ./build/bin/open-ethereum-pool config.json
-
+```
+    ./build/bin/pool config.json
+```
 You can use Ubuntu upstart - check for sample config in <code>upstart.conf</code>.
 
 ### Building Frontend
@@ -54,17 +37,17 @@ You can use Ubuntu upstart - check for sample config in <code>upstart.conf</code
 Install nodejs. I suggest using LTS version >= 4.x from https://github.com/nodesource/distributions or from your Linux distribution or simply install nodejs on Ubuntu Xenial 16.04.
 
 The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
-
+```
     cd www
-
+```
 Change <code>ApiUrl: '//example.net/'</code> in <code>www/config/environment.js</code> to match your domain name. Also don't forget to adjust other options.
-
+```
     npm install -g ember-cli@2.9.1
     npm install -g bower
     npm install
     bower install
     ./build.sh
-
+```
 Configure nginx to serve API on <code>/api</code> subdirectory.
 Configure nginx to serve <code>www/dist</code> as static website.
 
@@ -85,9 +68,9 @@ and add this setting after <code>location /</code>:
 #### Customization
 
 You can customize the layout using built-in web server with live reload:
-
+```
     ember server --port 8082 --environment development
-
+```
 **Don't use built-in web server in production**.
 
 Check out <code>www/app/templates</code> directory and edit these templates
@@ -105,7 +88,7 @@ otherwise you will get errors on start because of JSON comments.**
   // Set to the number of CPU cores of your server
   "threads": 2,
   // Prefix for keys in redis store
-  "coin": "eth",
+  "coin": "mrc",
   // Give unique name to each instance
   "name": "main",
 
@@ -244,7 +227,7 @@ otherwise you will get errors on start because of JSON comments.**
     "poolFee": 1.0,
     // Pool fees beneficiary address (leave it blank to disable fee withdrawals)
     "poolFeeAddress": "",
-    // Donate 10% from pool fees to developers
+    // Donate 1% from pool fees to Marconi Foundation
     "donate": true,
     // Unlock only if this number of blocks mined back
     "depth": 120,
@@ -303,22 +286,3 @@ I recommend this deployment strategy:
 * Don't run payouts and unlocker modules as part of mining node. Create separate configs for both, launch independently and make sure you have a single instance of each module running.
 * If `poolFeeAddress` is not specified all pool profit will remain on coinbase address. If it specified, make sure to periodically send some dust back required for payments.
 
-### Alternative Ethereum Implementations
-
-This pool is tested to work with [Ethcore's Parity](https://github.com/ethcore/parity). Mining and block unlocking works, but I am not sure about payouts and suggest to run *official* geth node for payments.
-
-### Credits
-
-Made by sammy007. Licensed under GPLv3.
-
-#### Contributors
-
-[Alex Leverington](https://github.com/subtly)
-
-### Donations
-
-ETH/ETC: 0xb85150eb365e7df0941f0cf08235f987ba91506a
-
-![](https://cdn.pbrd.co/images/GP5tI1D.png)
-
-Highly appreciated.

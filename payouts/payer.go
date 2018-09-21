@@ -10,9 +10,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
-	"github.com/sammy007/open-ethereum-pool/rpc"
-	"github.com/sammy007/open-ethereum-pool/storage"
-	"github.com/sammy007/open-ethereum-pool/util"
+	"git.marconi.org/marconiprotocol/pool/rpc"
+	"git.marconi.org/marconiprotocol/pool/storage"
+	"git.marconi.org/marconiprotocol/pool/util"
 )
 
 const txCheckInterval = 5 * time.Second

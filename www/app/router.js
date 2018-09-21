@@ -16,10 +16,8 @@ Router.map(function() {
     this.route('pending');
   });
 
-  this.route('help');
   this.route('payments');
   this.route('miners');
-  this.route('about');
 });
 
 export default Router;

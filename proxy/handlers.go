@@ -3,10 +3,11 @@ package proxy
 import (
 	"log"
 	"regexp"
+	"strconv"
 	"strings"
 
-	"github.com/sammy007/open-ethereum-pool/rpc"
-	"github.com/sammy007/open-ethereum-pool/util"
+	"git.marconi.org/marconiprotocol/pool/rpc"
+	"git.marconi.org/marconiprotocol/pool/util"
 )
 
 // Allow only lowercase hexadecimal with 0x prefix
@@ -38,7 +39,8 @@ func (s *ProxyServer) handleGetWorkRPC(cs *Session) ([]string, *ErrorReply) {
 	if t == nil || len(t.Header) == 0 || s.isSick() {
 		return nil, &ErrorReply{Code: 0, Message: "Work not ready"}
 	}
-	return []string{t.Header, t.Seed, s.diff}, nil
+	block_height_decimal_str := strconv.FormatUint(t.Height, 10)
+	return []string{t.Header, t.Seed, s.diff, block_height_decimal_str}, nil
 }
 
 // Stratum

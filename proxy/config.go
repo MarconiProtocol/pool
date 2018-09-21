@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/sammy007/open-ethereum-pool/api"
-	"github.com/sammy007/open-ethereum-pool/payouts"
-	"github.com/sammy007/open-ethereum-pool/policy"
-	"github.com/sammy007/open-ethereum-pool/storage"
+	"git.marconi.org/marconiprotocol/pool/api"
+	"git.marconi.org/marconiprotocol/pool/payouts"
+	"git.marconi.org/marconiprotocol/pool/policy"
+	"git.marconi.org/marconiprotocol/pool/storage"
 )
 
 type Config struct {

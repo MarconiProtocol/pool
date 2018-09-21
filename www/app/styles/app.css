@@ -7,7 +7,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background: url('/bg.png');
+  /* BACKGROUNDGONE background: url('/bg.png'); */
 }
 .footer {
   position: absolute;
@@ -176,3 +176,281 @@ h4.note {
 .stats > div > span:first-of-type{
 	font-weight: bold;
 }
+
+/*************/
+@font-face {
+    font-family: 'ComfortaaLight';
+    src: url('/ComfortaaLight.eot');
+    src: url('/ComfortaaLight.eot') format('embedded-opentype'),
+         url('/ComfortaaLight.woff2') format('woff2'),
+         url('/ComfortaaLight.woff') format('woff'),
+         url('/ComfortaaLight.ttf') format('truetype'),
+         url('/ComfortaaLight.svg#ComfortaaLight') format('svg');
+}
+@font-face {
+    font-family: 'ComfortaaRegular';
+    src: url('/ComfortaaRegular.eot');
+    src: url('/ComfortaaRegular.eot') format('embedded-opentype'),
+         url('/ComfortaaRegular.woff2') format('woff2'),
+         url('/ComfortaaRegular.woff') format('woff'),
+         url('/ComfortaaRegular.ttf') format('truetype'),
+         url('/ComfortaaRegular.svg#ComfortaaRegular') format('svg');
+}
+@font-face {
+    font-family: 'ComfortaaBold';
+    src: url('/ComfortaaBold.eot');
+    src: url('/ComfortaaBold.eot') format('embedded-opentype'),
+         url('/ComfortaaBold.woff2') format('woff2'),
+         url('/ComfortaaBold.woff') format('woff'),
+         url('/ComfortaaBold.ttf') format('truetype'),
+         url('/ComfortaaBold.svg#ComfortaaBold') format('svg');
+}
+body{font-family: 'ComfortaaLight';margin-bottom:250px;}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover{background:none}
+.navbar-default {
+    background-color: #074cc4;
+    border-color: #074cc4;
+}
+.navbar-default .navbar-nav > li > a i{display:none}
+.jumbotron {
+    background-color: #eef4fb;
+}
+.btn.btn-primary{
+   display: block;
+font-size: 15px;
+height: 44px;
+line-height: 22px;
+border-radius: 32px !important;
+text-align: center;
+background: #074cc4;
+color: #fff;
+width:140px;	
+}
+.input-group .form-control{width:99%;
+border-radius: 32px !important;
+height: 44px;
+}
+.note-info {
+    background-color: #cde4ff;
+    border-color: #074cc4;
+}
+a{
+color:#074cc4
+}
+.label-info {
+   background-color: #2a4d8c;
+}
+code {
+
+    color: #1f191a;
+    background-color: #eef4fb;
+
+}
+.footer-section{
+    position: absolute;
+bottom: 0;
+background: #eef4fb;
+padding: 20px 0;
+}
+.footer-box {
+    padding: 50px 0 40px;
+       
+}
+.footer-box-home {
+    padding-top: 0px;
+}
+.footer-links {
+    text-align: left;
+}
+.footer-box div {
+    letter-spacing: 0;
+}
+.footer-box ul {
+    margin: 0px 0 0;
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+}
+.footer-box ul li {
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 40px;
+        padding-top: 0px;
+}
+.footer-links .link-head {
+    line-height: 35px;
+    padding-top: 5px;
+}
+.footer-box b {
+    color: #888a8a;
+}
+.footer-box .clickable {
+    z-index: 1000;
+}
+.footer-links a {
+    line-height: 35px;
+}
+.footer-box ul li a {
+    color: #3b3b3b;
+}
+.footer-links .link-head {
+    line-height: 35px;
+    padding-top: 5px;
+text-transform: uppercase;
+font-weight: 300;
+}
+.twitter::before {
+    display: inline-block;
+    content: '';
+    background: url('/twitter.svg');
+        background-size: auto auto;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    line-height: 14px;
+    vertical-align: sub;
+    margin-right: 5px;
+    margin-left: -20px;
+}
+.mail::before {
+    display: inline-block;
+    content: '';
+    background: url('/envelope.svg');
+        background-size: auto auto;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    line-height: 14px;
+    vertical-align: sub;
+    margin-right: 5px;
+    margin-left: -20px;
+}
+.contact::before {
+    display: inline-block;
+    content: '';
+    background: url('/user-circle.svg');
+        background-size: auto auto;
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    line-height: 14px;
+    vertical-align: sub;
+    margin-right: 5px;
+    margin-left: -20px;
+}
+.footer-logo {
+    padding-top: 25px;
+}
+.copyright {
+    font-size: 12px;
+    padding-top: 15px;
+    text-align: left;
+}
+.label-primary {
+    background-color: #2a4d8c;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) { 
+    background-color: #eef4fb;
+}
+.navbar-nav > li:last-child > a .badge.alert-success{display:none}
+.alert-success {
+    background-color: #fff;
+    border-color: #fff;
+}
+.navbar-default .navbar-brand .logo-1,.navbar-default .navbar-brand .logo-2{display:none}
+.navbar-default .navbar-brand,.footer-logo {background:url('/marconi_pool_logo.svg') no-repeat left top; width: 185px;height: 37px;padding: 0;float: left;margin:14px 20px 0 0;background-size:contain}
+.footer-logo{margin:20px 0 5px;background:url('/footer-logo.svg') no-repeat left top; }
+.copyright{width:172px;}
+.footer-links.community ul li.link-head{padding:5px 20px 0;}
+/**************/
+@media screen and (max-width:1199px){
+body {
+    margin-bottom: 330px;
+
+}
+.footer-box ul li {
+    padding: 0 38px;
+}
+}
+@media screen and (max-width:991px){
+.footer-box {
+    padding: 40px 2%;
+}
+.footer-box .footer-links ul {
+    width: 100%;
+    border-bottom:1px solid #d8dee4;
+}
+.footer-box .link-head {
+    font-size: 16px;
+}
+.footer-box ul li:last-child {
+    padding-bottom: 5px;
+}
+.footer-box .border-none {
+    border-bottom: none;
+}
+.mail::before {
+    left: 80px;
+}
+.copyright, .footer-links {
+    text-align: center;
+}
+.copyright {
+    width: 100%;
+padding:0;
+}
+.footer-logo {
+    margin: 20px auto 0;
+    float: none !important;
+}
+.navbar > .container .navbar-brand{
+margin-left:0
+}
+.nav > li > a {
+    padding: 10px; 
+}
+body {
+    margin-bottom: 680px;
+
+}
+.navbar-nav {
+    margin: 6px 0 0;
+}
+}
+@media screen and (max-width:767px){
+.navbar > .container .navbar-brand {
+    margin-left: 15px;
+}
+.navbar-nav {
+    margin:0;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
